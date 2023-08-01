@@ -1,0 +1,14 @@
+/* styles.css */
+
+/* Make the images fill the div container */
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures the image scales without distortion */
+}
+
+/* Adjust the div size here if needed */
+.card-container {
+  width: 300px;
+  height: 400px;
+}
