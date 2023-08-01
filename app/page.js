@@ -16,24 +16,24 @@ export default function Home() {
     <motion.div
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
-      className={`flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] ${
-        isHovered ? "space-x-2 rotate-open-book" : ""
-      } card-container`}
+      className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7] card-container"
     >
-      <div className="flex space-x-2">
+      <div className="relative">
         <Image
-          style={{ opacity: isHovered ? 0 : 1 }}
-          className="w-auto h-auto transform-galaxy-card-left"
-          width={336}
-          height={336}
+          className={`w-auto h-auto ${
+            isHovered ? "skew-y-3" : "skew-y-0"
+          } transform origin-left-bottom`}
+          width={366}
+          height={366}
           src={galaxy1}
           alt="Galaxy 1 "
         />
         <Image
-          style={{ opacity: isHovered ? 1 : 0 }}
-          className="w-auto h-auto transform-galaxy-card-right"
-          width={336}
-          height={336}
+          className={`absolute top-0 left-0 w-auto h-auto transition-transform duration-500 ${
+            isHovered ? "-rotate-6" : "rotate-0"
+          } transform origin-left`}
+          width={366}
+          height={366}
           src={galaxy2}
           alt="Galaxy 2"
         />
@@ -55,3 +55,4 @@ export default function Home() {
     </motion.div>
   );
 }
+
