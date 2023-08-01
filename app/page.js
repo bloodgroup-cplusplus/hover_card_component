@@ -1,9 +1,18 @@
+'use client'
 import Image from 'next/image'
 import next from "../public/next.svg"
+import vercel from "../public/vercel.svg"
+import {motion} from "framer-motion"
+import { useState } from 'react'
 export default function Home() {
+  const[isHovered,setIsHovered] = useState(false);
+  const handleHover=()=>{
+    setIsHovered(!isHovered);
+  };
   return (
-    <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
-    <Image className="w-full h-auto rounded-t-xl" src={next}  width={36} height={36} alt="Image Description"/>
+    <div onMouseEnter={handleHover} onMouseLeave={handleHover} className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+    <motion.img style={{opacity:isHovered?0:1}} className="w-auto h-auto rounded-t-xl" src={next} alt="Next Logo"/>
+    <motion.img style={{opacity:isHovered?1:0}} className="w-auto h-auto rounded-t-xl" src={vercel} alt="Vercel Logo"/>
     <div className="p-4 md:p-5">
       <h3 className="text-lg font-bold text-gray-800 dark:text-white">
         My Card
