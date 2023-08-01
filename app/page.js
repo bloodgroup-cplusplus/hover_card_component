@@ -21,8 +21,8 @@ export default function Home() {
       <div className="relative">
         <Image
           className={`w-auto h-auto ${
-            isHovered ? "skew-y-3" : "skew-y-0"
-          } transform origin-left-bottom`}
+            isHovered ? "-skew-x-3" : "skew-x-0"
+          } transform origin-left-top`}
           width={366}
           height={366}
           src={galaxy1}
@@ -55,4 +55,3 @@ export default function Home() {
     </motion.div>
   );
 }
-
